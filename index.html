@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -15,55 +16,60 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-    <script src="main/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
   </head>
 
   <body>
-    <h1>Добро пожаловать на мой сайт! ⭐️</h1>
-    <p>Как прошел день? 🎉</p>
+    <h1 class="text-center">Добро пожаловать на сайт доставки ⭐️</h1>
     
-    <!-- Форма для отправки сообщения в Телеграм -->
-    <div class="column">
+    <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 mx-auto">
                 <form id="telegramForm">
                     <div class="form-group">
-                        <label for="userName">Имя:</label>
-                        <input type="text" class="form-control" id="userName" required>
+                        <label for="packageAddress">Адрес посылки:</label>
+                        <input type="text" class="form-control" id="packageAddress" required>
                     </div>
                     <div class="form-group">
-                        <label for="userEmail">Email:</label>
-                        <input type="email" class="form-control" id="userEmail" required>
+                        <label for="deliveryAddress">Адрес доставки:</label>
+                        <input class="form-control" id="deliveryAddress" required>
                     </div>
                     <div class="form-group">
-                        <label for="userMessage">Сообщение:</label>
-                        <input class="form-control" id="userMessage" required></textarea>
+                    <label for="phoneNumber">Телефон в формате(996-ХХХ-ХХХ-ХХ):</label>
+                    <input class="form-control" id="phoneNumber" inputmode="numeric" type="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{3}" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Отправить</button>
+                    <button type="submit" class="btn btn-primary" >Отправить</button>
                 </form>
             </div>
         </div>
     </div>
-    <button onclick="sendMessageToTelegram()">Отправить сообщение в Телеграм</button>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <h3>Column 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </div>
-            <div class="col-sm-4">
-                <h3>Column 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </div>
-            <div class="col-sm-4">
-                <h3>Column 3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </div>
-        </div>
-    </div>
+    <script>
+        telegramForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                validateForm();
+            });
+    </script>
+    <!-- <script>
+        function formatPhoneNumber(input) {
+                // Удаление всех символов, кроме цифр
+                var phoneNumber = input.value.replace(/\D/g, '');
+
+                // Добавление разделителей в номер
+                var formattedPhoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{3})(\d{3})/, '996-$1-$2-$3-$4');
+
+                // Установка отформатированного номера обратно в поле ввода
+                input.value = formattedPhoneNumber;
+            }
+
+            // Получение поля ввода номера телефона
+            var phoneNumberInput = document.getElementById('phoneNumber');
+
+            // Обработка события изменения значения в поле ввода
+            phoneNumberInput.addEventListener('input', function () {
+                formatPhoneNumber(this);
+            });
+    </script> -->
   </body>
 </html>
