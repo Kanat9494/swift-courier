@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Мой крутой сайт</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -23,25 +23,47 @@
     <p>Как прошел день? 🎉</p>
     
     <!-- Форма для отправки сообщения в Телеграм -->
-    <div class="row">
-        <div class="col-md-6">
-            <form id="telegramForm">
-                <div class="form-group">
-                    <label for="userName">Имя:</label>
-                    <input type="text" class="form-control" id="userName" required>
-                </div>
-                <div class="form-group">
-                    <label for="userEmail">Email:</label>
-                    <input type="email" class="form-control" id="userEmail" required>
-                </div>
-                <div class="form-group">
-                    <label for="userMessage">Сообщение:</label>
-                    <textarea class="form-control" id="userMessage" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Отправить</button>
-            </form>
+    <div class="column">
+        <div class="row">
+            <div class="col-md-6">
+                <form id="telegramForm">
+                    <div class="form-group">
+                        <label for="userName">Имя:</label>
+                        <input type="text" class="form-control" id="userName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">Email:</label>
+                        <input type="email" class="form-control" id="userEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userMessage">Сообщение:</label>
+                        <input class="form-control" id="userMessage" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </div>
         </div>
     </div>
     <button onclick="sendMessageToTelegram()">Отправить сообщение в Телеграм</button>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Column 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Column 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Column 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+        </div>
+    </div>
   </body>
 </html>
